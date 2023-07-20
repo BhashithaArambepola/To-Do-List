@@ -19,13 +19,19 @@ const [updateData,setUpdateData]=useState('');
 
 // add Task function
 const addTask=()=>{
-//
+if(newTask){
+    let num=toDo.length+1;
+    let newEntry ={id: num, title:newTask, status:false}
+    setToDo([...toDo,newEntry])
+    setNewTask("");
+}
 }  
 
 
 // delete Task function
 const deleteTask=(id)=>{
-    //
+let newTasks =toDo.filter(task=>task.id!== id)
+setToDo(newTasks)
 }
 
 // mark task as done or completed
@@ -57,10 +63,12 @@ return (
 {/* add task */}
 <div className='row pb-3 d-flex justify-content-between'>
 <div className='col-8'>
-    <input className='form-control form-control-lg'></input>
+    <input
+    value={newTask}
+    onChange={(e)=>setNewTask(e.target.value)} className='form-control form-control-lg'></input>
 </div>
 <div className='col-auto d-flex justify-content-end'>
-    <button className='btn btn-success btn-lg '>Add Task</button>
+    <button onClick={addTask} className='btn btn-success btn-lg '>Add Task</button>
 </div>
 </div>
 
@@ -95,7 +103,7 @@ mb-3 rounded text-start position-relative d-flex justify-content-between'>
 <div className='iconWrap'>
     <span title='Add New' className='px-2'><FontAwesomeIcon icon={faCircleCheck}/></span>
     <span title='Edit TAsk' className='px-2'><FontAwesomeIcon icon={faPen}/></span>
-    <span title='Delete' className='px-2'><FontAwesomeIcon icon={faTrashCan}/></span>
+    <span title='Delete' onClick={()=>deleteTask(task.id)} className='px-2'><FontAwesomeIcon icon={faTrashCan}/></span>
 </div>
 </div>
 
