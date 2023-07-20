@@ -36,7 +36,13 @@ setToDo(newTasks)
 
 // mark task as done or completed
 const markDone=(id)=>{
-// 
+let newTask=toDo.map(task=>{
+    if(task.id===id){
+        return({...task,status:!task.status})
+    }
+    return task;
+})
+setToDo(newTask)
 }
 
 // change Task for update function
@@ -101,7 +107,7 @@ mb-3 rounded text-start position-relative d-flex justify-content-between'>
 <span className='taskText'>{task.title}</span>
 </div>
 <div className='iconWrap'>
-    <span title='Add New' className='px-2'><FontAwesomeIcon icon={faCircleCheck}/></span>
+    <span title='Completed/Not Completed' onClick={(e)=>markDone(task.id)} className='px-2'><FontAwesomeIcon icon={faCircleCheck}/></span>
     <span title='Edit TAsk' className='px-2'><FontAwesomeIcon icon={faPen}/></span>
     <span title='Delete' onClick={()=>deleteTask(task.id)} className='px-2'><FontAwesomeIcon icon={faTrashCan}/></span>
 </div>
