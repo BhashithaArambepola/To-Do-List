@@ -7,7 +7,15 @@ import '../CSS/AppBody.css'
 
 function AppBody() {
 
+// toDo list State set
+const [toDo, setToDo]=useState([
+    {"id":1, "title":"task 1","status":false},
+    {"id":2, "title":"task 2","status":false}
+])
 
+// temp state
+const [newTask,setNewTask]=useState('');
+const [updateData,setUpdateData]=useState('');
 
 
   return (
