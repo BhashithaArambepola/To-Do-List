@@ -54,6 +54,15 @@ return (
 {/* Display To-Dos */}
 {toDo && toDo.length ? '': 'No Tasks...'}
 
+{/* add task */}
+<div className='row pb-3 d-flex justify-content-between'>
+<div className='col-8'>
+    <input className='form-control form-control-lg'></input>
+</div>
+<div className='col-auto d-flex justify-content-end'>
+    <button className='btn btn-success btn-lg '>Add Task</button>
+</div>
+</div>
 
 {toDo && toDo.sort((a,b)=>a.id>b.id ? 1:-1)
 .map((task,index)=>{
