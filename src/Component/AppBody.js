@@ -64,6 +64,22 @@ return (
 </div>
 </div>
 
+{/* update task */}
+<div className='row pb-3 d-flex '>
+<div className='col-12 col-md-7 col-lg-8 pb-3'>
+    <input className='form-control form-control-lg'></input>
+</div>
+<div className='col-12 col-md-5 col-lg-4  d-flex justify-content-center  justify-content-md-end '>
+    <button className='btn btn-success btn-lg me-md-2 me-5'>Update Task</button>
+    <button className='btn btn-warning btn-lg '>Cancel</button>
+</div>
+<div className='col-auto col-md-2 d-flex justify-content-end'>
+
+  
+</div>
+</div>
+
+
 {toDo && toDo.sort((a,b)=>a.id>b.id ? 1:-1)
 .map((task,index)=>{
     return(
