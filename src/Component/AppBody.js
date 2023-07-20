@@ -17,8 +17,36 @@ const [toDo, setToDo]=useState([
 const [newTask,setNewTask]=useState('');
 const [updateData,setUpdateData]=useState('');
 
+// add Task function
+const addTask=()=>{
+//
+}  
 
-  return (
+
+// delete Task function
+const deleteTask=(id)=>{
+    //
+}
+
+// mark task as done or completed
+const markDone=(id)=>{
+// 
+}
+
+// change Task for update function
+const changeTask=(e)=>{
+    // 
+}
+
+
+// update task
+const updateTask=()=>{
+    // 
+}
+
+
+
+return (
     <div className='appBody py-5'>
 <h1>To Do List</h1>
 
