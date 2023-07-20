@@ -5,3 +5,36 @@ body{
 .appBody{
     text-align: center;
 }
+
+.taskBg{
+font-size: 22px;
+background-color: #555;
+}
+
+.taskNumber{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+
+}
+
+.taskBg .done .taskText{
+text-decoration: line-through;
+opacity: 0.3;
+flex: 1;
+
+}
+.taskBg div{
+    display: flex;
+    align-items: center;
+}
+
+.iconWrap span{
+cursor: pointer;
+color: #00ff89;
+}
+.iconWrap span:hover{
+      color: yellow;
+    }
